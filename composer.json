@@ -12,7 +12,7 @@
 	],
 	"require": {
 		"php": ">=5.5.9",
-		"Trunk/errors": "0.*"
+		"trunksoftware/errors": "0.*"
 	},
 	"autoload": {
 		"psr-4": { "TrunkSoftware\\Component\\Http\\": "" },
