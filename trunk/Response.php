@@ -79,6 +79,7 @@ class Response implements ResponseInterface {
 	public function setError( ErrorInterface $error ) {
 		$this->setCode( $error->getErrorCode() );
 		$this->addError( $error );
+		return $this;
 	}
 
 	public function addError( ErrorInterface $error ) {
