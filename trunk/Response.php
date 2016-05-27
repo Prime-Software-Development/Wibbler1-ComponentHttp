@@ -13,12 +13,12 @@ use TrunkSoftware\Component\Errors\ErrorBag;
 class Response implements ResponseInterface {
 
 	private $errors;
-	private $data = array();
+	private $data;
 
-	// HTTP status code
-	private $code = Status::HTTP_OK;
+	// response code e.g. HTTP status code
+	private $code;
 
-	public function __construct( $data = array(), $code = Status::HTTP_OK ) {
+	public function __construct( $data = array(), $code = null ) {
 
 		$this->errors = new ErrorBag();
 
