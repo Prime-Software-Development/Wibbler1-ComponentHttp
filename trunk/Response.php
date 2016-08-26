@@ -33,7 +33,7 @@ class Response implements ResponseInterface {
 	}
 
 	public function addMergeContent( array $data ) {
-		if( !$this->error )
+		if( !$this->errors->getCount() )
 			$this->data = array_merge( $this->data, $data );
 		return $this;
 	}
