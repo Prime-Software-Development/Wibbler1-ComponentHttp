@@ -5,10 +5,12 @@ class Request
 {
 	protected $get = array();
 	protected $post = array();
+	protected $raw = array();
 
-	public function __construct( array $get, array $post ) {
+	public function __construct( array $get, array $post, array $raw ) {
 		$this->get = $get;
 		$this->post = $post;
+		$this->raw = $raw;
 	}
 
 	public function post( $name, $default = null ) {
@@ -34,6 +36,9 @@ class Request
 		if( isset( $this->post[ $name ] ) ) {
 			return $this->post[ $name ];
 		}
+		if ( isset( $this->raw[ $name ] ) ) {
+			return $this->raw[ $name ] ;
+		}
 
 		return $default;
 	}
@@ -48,8 +53,12 @@ class Request
 			case "GET":
 				$results = $this->get;
 				break;
+			case "raw":
+			case "RAW":
+				$results = $this->raw;
+				break;
 			default:
-				$results = array_merge( array(), $this->get, $this->post );
+				$results = array_merge( array(), $this->get, $this->post, $this->raw );
 				break;
 		}
 
