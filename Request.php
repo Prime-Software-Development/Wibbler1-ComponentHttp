@@ -7,10 +7,18 @@ class Request
 	protected $post = array();
 	protected $raw = array();
 
-	public function __construct( array $get, array $post, array $raw ) {
+	public function __construct( array $get, array $post, array $raw = null ) {
 		$this->get = $get;
 		$this->post = $post;
 		$this->raw = $raw;
+	}
+
+	public function raw( $name, $default = null ) {
+		if( isset( $this->raw[ $name ] ) ) {
+			return $this->raw[ $name ];
+		}
+
+		return $default;
 	}
 
 	public function post( $name, $default = null ) {
