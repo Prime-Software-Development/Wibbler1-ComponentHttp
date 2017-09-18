@@ -78,18 +78,19 @@ class Status {
 	/**
 	 * The request method is not supported by the following resource
 	 */
-	const HTTP_METHOD_NOT_ALLOWED = 405;
+	const HTTP_METHOD_NOT_ALLOWED = 405;                                          // request method not allowed (e.g. DELETE, PUT)
 	/**
 	 * The request was not acceptable
 	 */
-	const HTTP_NOT_ACCEPTABLE = 406;
+	# @Reference https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation#Server-driven_negotiation
+	const HTTP_NOT_ACCEPTABLE = 406;                                              // e.g. 'Accept' headers format can't be satisfied by the server
 	const HTTP_PROXY_AUTHENTICATION_REQUIRED = 407;
 	const HTTP_REQUEST_TIMEOUT = 408;
 	/**
 	 * The request could not be completed due to a conflict with the current state
 	 * of the resource
 	 */
-	const HTTP_CONFLICT = 409;
+	const HTTP_CONFLICT = 409;                                                    // e.g. PUT uploading a file which is older than the one already on the server resulting in a version control conflict
 	const HTTP_GONE = 410;
 	const HTTP_LENGTH_REQUIRED = 411;
 	const HTTP_PRECONDITION_FAILED = 412;
@@ -97,7 +98,7 @@ class Status {
 	const HTTP_REQUEST_URI_TOO_LONG = 414;
 	const HTTP_UNSUPPORTED_MEDIA_TYPE = 415;
 	const HTTP_REQUESTED_RANGE_NOT_SATISFIABLE = 416;
-	const HTTP_EXPECTATION_FAILED = 417;
+	const HTTP_EXPECTATION_FAILED = 417;                                          // expectation given in the request's 'Expect' header could not be met.
 	const HTTP_I_AM_A_TEAPOT = 418;                                               // RFC2324
 	const HTTP_UNPROCESSABLE_ENTITY = 422;                                        // RFC4918
 	const HTTP_LOCKED = 423;                                                      // RFC4918
