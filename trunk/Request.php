@@ -7,7 +7,7 @@ class Request
 	protected $post = array();
 	protected $raw = array();
 
-	public function __construct( array $get, array $post, array $raw = null ) {
+	public function __construct( array $get, array $post, array $raw = [] ) {
 		$this->get = $get;
 		$this->post = $post;
 		$this->raw = $raw;
