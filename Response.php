@@ -4,19 +4,26 @@ use TrunkSoftware\Component\Errors\ErrorInterface;
 use TrunkSoftware\Component\Errors\ErrorBag;
 
 /**
- * Created by PhpStorm.
- * User: trunk
- * Date: 05/01/16
- * Time: 16:55
+ * Class Response
+ * @package TrunkSoftware\Component\Http
  */
-
 class Response implements ResponseInterface {
 
+	/**
+	 * @var ErrorBag
+	 */
 	private $errors;
+
+	/**
+	 * @var array
+	 */
 	private $data;
 
-	// response code e.g. HTTP status code
-	private $code;
+	/**
+	 * response code e.g. HTTP status code
+	 * @var int|null
+	 */
+	private $code = 200;
 
 	public function __construct( $data = array(), $code = null ) {
 
@@ -93,5 +100,32 @@ class Response implements ResponseInterface {
 
 	public function hasErrors() {
 		return $this->errors->getCount();
+	}
+
+	/**
+	 * Output the response
+	 */
+	public function render_output() {
+
+		// If the code is not 200
+		if ( $this->code !== 200 ) {
+			// Output the correct response code
+			http_response_code( $this->code );
+		}
+
+		// If there are errors
+		if ( $this->errors ) {
+			// Iterate over the errors
+			foreach( $this->errors as $error ) {
+				// Output the error message
+				echo $error->getMessage() . "\n";
+			}
+		}
+
+		$this->_render_output();
+	}
+
+	protected function _render_output() {
+
 	}
 }
