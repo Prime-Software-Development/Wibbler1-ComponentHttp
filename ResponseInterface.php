@@ -1,5 +1,5 @@
 <?php
-namespace TrunkSoftware\Component\Http;
+namespace Trunk\Component\Http;
 
 interface ResponseInterface {
 

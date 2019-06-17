@@ -1,5 +1,5 @@
 <?php
-namespace TrunkSoftware\Component\Http;
+namespace Trunk\Component\Http;
 /**
  * Provide HTTP status code constants
  * Created by PhpStorm.

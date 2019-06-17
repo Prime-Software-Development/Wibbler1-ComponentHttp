@@ -1,7 +1,7 @@
 <?php
-namespace TrunkSoftware\Component\Http;
-use TrunkSoftware\Component\Errors\ErrorInterface;
-use TrunkSoftware\Component\Errors\ErrorBag;
+namespace Trunk\Component\Http;
+use Trunk\Component\Errors\ErrorInterface;
+use Trunk\Component\Errors\ErrorBag;
 
 /**
  * Class Response

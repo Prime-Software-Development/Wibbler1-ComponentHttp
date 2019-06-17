@@ -1,23 +1,30 @@
 {
-	"name": "trunksoftware/http",
-	"type": "library",
-	"description": "TrunkSoftware Http Component",
-	"homepage": "http://www.trunknetworks.com/",
-	"keywords": [],
-	"authors": [
-		{
-			"name": "Narvydas Mekionis",
-			"email": "nm@trunknetworks.com"
-		}
-	],
-	"require": {
-		"php": ">=5.5.9",
-		"trunksoftware/errors": "0.*"
-	},
-	"autoload": {
-		"psr-4": { "TrunkSoftware\\Component\\Http\\": "" },
-		"exclude-from-classmap": [
-			"/Tests/"
-		]
+  "name": "trunk/http",
+  "type": "library",
+  "description": "TrunkSoftware Http Component",
+  "homepage": "http://www.trunknetworks.com/",
+  "authors": [
+	{
+	  "name": "Chris Weller",
+	  "email": "chris.weller@trunknetworks.com"
 	}
+  ],
+  "repositories": [
+	{
+	  "type": "vcs",
+	  "url": "https://github.com/ChrisWeller/Trunk-Wibbler1-ComponentErrors"
+	}
+  ],
+  "require": {
+	"php": ">=7",
+	"trunk/errors": "0.*"
+  },
+  "autoload": {
+	"psr-4": {
+	  "Trunk\\Component\\Http\\": ""
+	},
+	"exclude-from-classmap": [
+	  "/Tests/"
+	]
+  }
 }
