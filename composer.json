@@ -17,11 +17,11 @@
   ],
   "require": {
 	"php": ">=7",
-	"trunk/errors": "0.*"
+	"trunk/errors": "*"
   },
   "autoload": {
 	"psr-4": {
-	  "Trunk\\Component\\Http\\": ""
+	  "Trunk\\Component\\Http\\": "src"
 	},
 	"exclude-from-classmap": [
 	  "/Tests/"
