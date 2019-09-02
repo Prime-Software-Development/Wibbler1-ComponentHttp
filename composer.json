@@ -1,12 +1,12 @@
 {
-  "name": "trunk/http",
+  "name": "primesoftwaredevelopment/http",
   "type": "library",
-  "description": "TrunkSoftware Http Component",
-  "homepage": "http://www.trunknetworks.com/",
+  "description": "Prime Software Development Http Component",
+  "homepage": "http://www.primesoftwaredevelopment.co.uk/",
   "authors": [
 	{
 	  "name": "Chris Weller",
-	  "email": "chris.weller@trunknetworks.com"
+	  "email": "chris@primesoftwaredevelopment.co.uk"
 	}
   ],
   "repositories": [
@@ -17,7 +17,7 @@
   ],
   "require": {
 	"php": ">=7",
-	"trunk/errors": "*"
+	"primesoftwaredevelopment/errors": "*"
   },
   "autoload": {
 	"psr-4": {
