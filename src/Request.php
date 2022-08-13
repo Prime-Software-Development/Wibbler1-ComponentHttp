@@ -11,6 +11,8 @@ class Request
 		$this->get = $get;
 		$this->post = $post;
 		$this->raw = $raw;
+
+		$this->method = strtolower($_SERVER['REQUEST_METHOD']);
 	}
 
 	public function raw( $name, $default = null ) {
