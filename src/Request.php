@@ -6,6 +6,7 @@ class Request
 	protected $get = array();
 	protected $post = array();
 	protected $raw = array();
+	private $method = "";
 
 	public function __construct( array $get, array $post, array $raw = [] ) {
 		$this->get = $get;
